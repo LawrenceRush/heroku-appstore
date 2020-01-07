@@ -5,6 +5,8 @@ var mongojs = require("mongojs");
 var mongo_db = mongojs("mongodb://localhost:27017/appStoreDB", ["cartapps"]);
 
 const app = express();
+const port = process.env.PORT || 3001;
+
 
 const path = require("path")
 
@@ -62,6 +64,6 @@ app.get("*", (req, res) => {
 });
 
 
-app.listen(3001, () =>
+app.listen(port, () =>
   console.log('Express server is running on localhost:3001')
 );
