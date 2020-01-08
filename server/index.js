@@ -1,17 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require("path")
 const pino = require('express-pino-logger')();
 var MongoClient = require('mongodb').MongoClient;
 var url = process.env.MONGODB_URI || "mongodb://localhost:27017/";
+const publicPath = path.join(__dirname, "../client/build");
 
 const app = express();
 const port = process.env.PORT || 3001;
 
 
-const path = require("path")
 
 // ... other app.use middleware 
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(publicPath));
 
 
 app.use(bodyParser.urlencoded({ extended: false,
@@ -70,7 +71,7 @@ MongoClient.connect(url, function(err, db) {
 })
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build/index.html"));
+  res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 
