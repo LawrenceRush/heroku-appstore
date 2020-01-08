@@ -11,7 +11,7 @@ const port = process.env.PORT || 3001;
 const path = require("path")
 
 // ... other app.use middleware 
-app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 
 
 app.use(bodyParser.urlencoded({ extended: false,
@@ -70,7 +70,7 @@ MongoClient.connect(url, function(err, db) {
 })
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join("./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "/client/build/index.html"));
 });
 
 
