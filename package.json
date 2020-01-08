@@ -33,6 +33,7 @@
     "@material-ui/icons": "^4.5.1",
     "@material-ui/lab": "^4.0.0-alpha.39",
     "concurrently": "^5.0.2",
+    "mongodb": "^3.4.1",
     "mongojs": "^3.1.0",
     "react-router-dom": "^5.1.2"
   }
