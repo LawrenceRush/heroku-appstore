@@ -70,7 +70,7 @@ MongoClient.connect(url, function(err, db) {
 })
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join("../../client/build/index.html"));
+  res.sendFile(path.join("./client/build/index.html"));
 });
 
 
