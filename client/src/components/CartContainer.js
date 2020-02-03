@@ -54,7 +54,7 @@ function CartContainer() {
 
 
     useEffect (() => {
-      
+     console.log("this is cart", cart) 
     },[cart]);
     
   
@@ -66,10 +66,10 @@ function CartContainer() {
       <div style = {containerStyle}>
         {cart && cart.map((app, index) => <CartCard key = {index} cartApp = {app}/>)}
         </div>
-        <div>
-          <div style = {seperationStyle}></div>
+        { cart.length !== 0 &&  <div>
+        <div style = {seperationStyle}></div>
     <div style={infoStyle}><span>Subtotal: </span><span>{cartTotal}</span></div>
-        </div>
+</div> }
         </div>
     )
 }

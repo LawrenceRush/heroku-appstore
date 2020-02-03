@@ -12,17 +12,57 @@ import { textAlign } from '@material-ui/system';
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 200,
-    maxHeight:300,
-    minHeight:325,
-    position: "relative",
-    textAlign: 'center'
+   height: "35vh",
+   width: "25vh"
   },
   media: {
-    height: 150,
+    height: "15vh",
+    width:"100%",
+    objectFit:"cover"
   },
 });
 
+const titleStyle = {
+  fontSize:"2vh",
+  textAlign:"center",
+  gridColumnStart:1,
+        gridColumnEnd: 3,
+        gridRowStart: 1,
+        gridRowEnd: 2,
+}
+
+const priceStyle = {
+  fontSize: "1.8vh",
+  gridColumnStart:1,
+  gridColumnEnd: 2,
+  gridRowStart: 3,
+  gridRowEnd: 4,
+  alignSelf: "end",
+  paddingLeft: "1vh"
+}
+
+const cardBodyConSty = {
+  display: "grid",
+  gridTemplateColumns: "8vh 17vh",
+  gridTemplateRows: "5vh 10vh 5vh"
+}
+
+const AddButtonSty = {
+  gridColumnStart:1,
+  gridColumnEnd: 3,
+  gridRowStart: 2,
+  gridRowEnd: 3,
+  alignSelf:"center",
+  placeSelf: "center",
+  paddingTop: "3vh"
+}
+
+const ratingSty = {
+  gridColumnStart:2,
+  gridColumnEnd: 3,
+  gridRowStart: 3,
+  gridRowEnd: 4,
+}
 export default function MediaCard(props) {
 
 const {appdata} = props 
@@ -34,18 +74,22 @@ const classes = useStyles();
   return (  
     <Card className={classes.card}>
       <CardMedia
+    
+
           className={classes.media}
           image={icon_url}
           title="Contemplative Reptile"
         />
-        <Typography gutterBottom variant="h6" component="h4">
+        <div style = {cardBodyConSty}>
+        <Typography style = {titleStyle} >
             {app_name}
           </Typography>
-          <Typography style = {{position:"absolute", bottom:0, left:10}}svariant="body2" color="textSecondary" component="p">
+          <Typography style = {priceStyle}>
           {price}
           </Typography>
-        <AddButton  appData = {appdata} addToCart = {addToCart}/>
-        <Rating  avg_rating ={avg_rating} />
+        <div style = {AddButtonSty} ><AddButton appData = {appdata} addToCart = {addToCart}/></div>
+        <div style = {ratingSty}><Rating avg_rating ={avg_rating} /></div>
+        </div>
     </Card>
   );
 }

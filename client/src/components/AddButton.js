@@ -6,11 +6,10 @@ export default function MakeButton({appData}) {
   //Had to do some weird stuff to grab reducer from the store here
   let {addToCart} = (useContext(StoreContext))
   
-  const buttonStyle = {
-    position:"absolute",
+  const buttonStyle = { 
     display: "block",
-    width: "115px",
-    height: "15px",
+    width: "10vh",
+    height: "1vh",
     background:" #4E9CAF",
     padding:"10px",
     textAlign: "center",
@@ -18,7 +17,8 @@ export default function MakeButton({appData}) {
     color:" blue",
     fontWeight: "bold",
     bottom:30,
-    left:35
+    left:35,
+    fontSize: " 1.5vh"
 };
 
   return (
