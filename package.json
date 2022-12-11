@@ -35,7 +35,7 @@
     "@material-ui/lab": "^4.0.0-alpha.39",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-pino-logger": "^4.0.0",
     "mongodb": "^3.4.1",
     "mongojs": "^3.1.0",
